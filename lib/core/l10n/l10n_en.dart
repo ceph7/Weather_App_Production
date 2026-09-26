@@ -1,0 +1,61 @@
+/// Translated strings — English.
+final Map<String, String> l10nEn = {
+  'appTitle': 'Weather App',
+  'retry': 'Retry',
+  'cancel': 'Cancel',
+  'clear': 'Clear',
+  'unknownError': 'An unexpected error occurred.',
+
+  'loginTitle': 'Weather App',
+  'loginSubtitle': 'Sign in to continue',
+  'email': 'Email',
+  'emailInvalid': 'Invalid email',
+  'password': 'Password',
+  'passwordTooShort': 'At least 6 characters',
+  'login': 'Sign in',
+  'noAccountYet': 'No account yet? Create one',
+  'createAccount': 'Create my account',
+  'fullName': 'Full name',
+  'nameRequired': 'Name is required',
+  'registerTitle': 'Create an account',
+  'genericLoginError': 'Login failed.',
+  'genericRegisterError': 'Account creation failed.',
+  'logout': 'Sign out',
+  'greetingPrefix': 'Hello,',
+
+  'navWeather': 'Weather',
+  'navSearch': 'Search',
+  'navSaved': 'Saved',
+
+  'weather': 'Weather',
+  'forecast5Days': '5-day forecast',
+  'favorite': 'Favorite',
+  'feelsLike': 'Feels like',
+  'humidity': 'Humidity',
+  'wind': 'Wind',
+  'cacheLabel': 'Cached',
+  'offlineBanner': 'Offline — showing cached data',
+  'forecastTitlePrefix': 'Forecast —',
+  'noForecastAvailable': 'No forecast available.',
+  'cacheLoadError': 'Unable to load cached data.',
+
+  'searchTitle': 'Search a city',
+  'searchHint': 'E.g.: Paris, Lomé, Tokyo...',
+  'recentSearches': 'Recent searches',
+  'searchEmptyState': 'Search a city to see its current weather.',
+
+  'savedTitle': 'Saved',
+  'favoritesSection': 'Favorites',
+  'offlineAvailableSection': 'Available offline',
+  'noCacheYet':
+      'No cached data yet. Search a city while online to make it '
+          'available offline.',
+
+  'semLogoutButton': 'Sign out',
+  'semFavoriteToggle': 'Add or remove from favorites',
+  'semSearchField': 'City search field',
+  'semTogglePasswordVisibility': 'Show or hide password',
+  'semWeatherIcon': 'Icon representing current weather',
+  'semClearHistory': 'Clear search history',
+  'semOfflineIndicator': 'No internet connection',
+};

@@ -1,0 +1,61 @@
+/// Chaînes traduites — français (langue par défaut de l'application).
+final Map<String, String> l10nFr = {
+  'appTitle': 'Météo App',
+  'retry': 'Réessayer',
+  'cancel': 'Annuler',
+  'clear': 'Effacer',
+  'unknownError': 'Une erreur inattendue est survenue.',
+
+  'loginTitle': 'Météo App',
+  'loginSubtitle': 'Connecte-toi pour continuer',
+  'email': 'Email',
+  'emailInvalid': 'Email invalide',
+  'password': 'Mot de passe',
+  'passwordTooShort': '6 caractères minimum',
+  'login': 'Se connecter',
+  'noAccountYet': 'Pas encore de compte ? Créer un compte',
+  'createAccount': 'Créer mon compte',
+  'fullName': 'Nom complet',
+  'nameRequired': 'Le nom est requis',
+  'registerTitle': 'Créer un compte',
+  'genericLoginError': 'Erreur de connexion.',
+  'genericRegisterError': 'Erreur lors de la création du compte.',
+  'logout': 'Déconnexion',
+  'greetingPrefix': 'Bonjour,',
+
+  'navWeather': 'Météo',
+  'navSearch': 'Recherche',
+  'navSaved': 'Enregistrés',
+
+  'weather': 'Météo',
+  'forecast5Days': 'Prévisions 5 jours',
+  'favorite': 'Favori',
+  'feelsLike': 'Ressenti',
+  'humidity': 'Humidité',
+  'wind': 'Vent',
+  'cacheLabel': 'Cache',
+  'offlineBanner': 'Hors ligne — affichage des données en cache',
+  'forecastTitlePrefix': 'Prévisions —',
+  'noForecastAvailable': 'Aucune prévision disponible.',
+  'cacheLoadError': 'Impossible de charger le cache.',
+
+  'searchTitle': 'Rechercher une ville',
+  'searchHint': 'Ex : Paris, Lomé, Tokyo...',
+  'recentSearches': 'Recherches récentes',
+  'searchEmptyState': 'Recherche une ville pour voir sa météo actuelle.',
+
+  'savedTitle': 'Enregistrés',
+  'favoritesSection': 'Favoris',
+  'offlineAvailableSection': 'Disponible hors-ligne',
+  'noCacheYet':
+      'Aucune donnée en cache pour le moment. Recherche une ville en étant '
+          'connecté pour la rendre disponible hors-ligne.',
+
+  'semLogoutButton': 'Se déconnecter',
+  'semFavoriteToggle': 'Ajouter ou retirer des favoris',
+  'semSearchField': 'Champ de recherche de ville',
+  'semTogglePasswordVisibility': 'Afficher ou masquer le mot de passe',
+  'semWeatherIcon': 'Icône représentant la météo actuelle',
+  'semClearHistory': 'Effacer l\'historique de recherche',
+  'semOfflineIndicator': 'Connexion internet indisponible',
+};

@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: '3.24.x'
+
+jobs:
+  analyze-and-test:
+    name: Lint, analyse & tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Récupérer les dépendances
+        run: flutter pub get
+
+      - name: Vérifier le formatage (dart format)
+        run: dart format --output=none --set-exit-if-changed lib test
+
+      - name: Analyse statique (flutter analyze)
+        run: flutter analyze --fatal-infos
+
+      - name: Tests unitaires et widgets (avec couverture)
+        run: flutter test --coverage
+
+      - name: Tests d'intégration (mode headless, sans device)
+        run: flutter test integration_test
+
+      - name: Uploader le rapport de couverture
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/lcov.info
+          retention-days: 14
+
+  build-demo-apk:
+    name: Build APK de démonstration
+    needs: analyze-and-test
+    runs-on: ubuntu-latest
+    # Ne construit l'APK que sur main, pour ne pas ralentir chaque PR.
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Installer le JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Récupérer les dépendances
+        run: flutter pub get
+
+      - name: Construire l'APK (release, démo)
+        run: flutter build apk --release --dart-define=OWM_API_KEY=${{ secrets.OWM_API_KEY }}
+
+      - name: Uploader l'APK de démonstration
+        uses: actions/upload-artifact@v4
+        with:
+          name: weather-app-demo-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
